@@ -70,10 +70,10 @@ variable "instance_profile_arn" {
   description = "The Amazon Resource Name (ARN) of the instance profile."
 }
 
-variable "instance_profile_name" {
-  type        = string
-  description = "The name of the instance profile."
-}
+# variable "instance_profile_name" {
+#   type        = string
+#   description = "The name of the instance profile."
+# }
 
 variable "template_tags" {
   type = map(string)
