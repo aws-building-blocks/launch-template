@@ -19,8 +19,8 @@ resource "aws_launch_template" "template" {
   vpc_security_group_ids = var.vpc_security_group_ids
 
   iam_instance_profile {
-    arn  = var.instance_profile_arn
-    name = var.instance_profile_name
+    arn = var.instance_profile_arn
+    # name = var.instance_profile_name
   }
 
   tags = merge(var.template_tags, {
