@@ -49,6 +49,17 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
+variable "use_ssh" {
+  type        = bool
+  default     = false
+  description = "Whether to use SSH to access the EC2 instances"
+}
+
+variable "key_name" {
+  type    = string
+  default = null
+}
+
 variable "use_userdata" {
   description = "Whether to use userdata"
   type        = bool
@@ -69,11 +80,6 @@ variable "instance_profile_arn" {
   type        = string
   description = "The Amazon Resource Name (ARN) of the instance profile."
 }
-
-# variable "instance_profile_name" {
-#   type        = string
-#   description = "The name of the instance profile."
-# }
 
 variable "template_tags" {
   type = map(string)

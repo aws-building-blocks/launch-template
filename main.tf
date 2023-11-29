@@ -15,12 +15,12 @@ resource "aws_launch_template" "template" {
   description            = var.template_description
   image_id               = data.aws_ami.ami.id
   instance_type          = var.instance_type
+  key_name               = var.use_ssh ? var.key_name : null
   user_data              = var.use_userdata ? base64encode(file(var.userdata_script_path)) : null
   vpc_security_group_ids = var.vpc_security_group_ids
 
   iam_instance_profile {
     arn = var.instance_profile_arn
-    # name = var.instance_profile_name
   }
 
   tags = merge(var.template_tags, {
